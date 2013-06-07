@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+     android:background="#eeeeee"
+    >
+    
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Course Details"
+        android:textAppearance="?android:attr/textAppearanceLarge" 
+        android:padding="20dp"
+        android:textStyle="bold"
+        android:background="#dddddd"
+        />
+
+    <TextView
+        android:id="@+id/textViewCourseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: Software Engineering"
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/textViewCourseId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course ID: IS C351"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:padding="5dp"
+         />
+
+    <TextView
+        android:id="@+id/textViewRoomNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Room: A-507"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textViewCoursetvsched"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weekly Class Schedule"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:padding="10dp"
+        android:textStyle="bold"
+         />
+
+    <ListView
+        android:id="@+id/listViewCoursepage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f2f2f2"
+         >
+    </ListView>
+
+</LinearLayout>

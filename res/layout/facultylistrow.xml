@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1.26"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvNameFac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#449922"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvChamberFac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A-502"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#333" />
+
+     <TextView
+            android:id="@+id/tvNumberFac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8007231464"
+            android:visibility="gone"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#333" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="0.02"
+        android:orientation="vertical" >
+
+        <!--
+              ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/ic_launcher" /
+        -->
+
+        <ImageView
+            android:id="@+id/imageViewFac"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            
+            android:src="@drawable/available" />
+    </LinearLayout>
+</LinearLayout>

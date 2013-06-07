@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+       android:background="#eeeeee" >    
+    
+<TextView android:id="@+id/lblheader" 
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:textSize="26dip"
+         android:textColor="#000"
+         android:textAppearance="?android:attr/textAppearanceLarge" 
+         android:padding="20dp"
+         android:textStyle="bold"
+         android:background="#dddddd"
+         android:text="GCM Registration"
+      />
+
+                <Button
+                    android:id="@+id/buttonCont"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/buttonbluestatelist"
+                    android:hapticFeedbackEnabled="true"
+                    android:padding="0dp"
+                    android:text="Continue"
+                    android:textColor="#fff"
+                    android:textSize="20dp" 
+                    android:clickable="false"
+                    />
+
+                <TextView
+                    android:id="@+id/lblMessage"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblheader"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dip"
+                    android:layout_marginTop="14dp"
+                    android:text="Please wait..."
+                    android:textColor="#000000"
+                    android:textSize="16dip" />
+
+</RelativeLayout>

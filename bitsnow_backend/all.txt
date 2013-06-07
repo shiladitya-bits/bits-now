@@ -1,0 +1,60 @@
+
+create table departments
+(
+depId integer auto_increment not null,
+depName varchar(255) not null,
+depMgr varchar(255),
+primary key(depId),
+foreign key(depMgr) references teachers(tid)
+
+);
+
+
+create table students
+(
+bitsid varchar(12) not null,
+name varchar(255) not null,
+hostel varchar(5),
+room int,
+email varchar(255),
+address varchar(255),
+contact int(10),
+did integer not null,
+primary key(bitsid),
+foreign key(did) references departments(depId));
+
+create table teachers
+(
+tid varchar(12) not null,
+name varchar(255),
+email varchar(255),
+address varchar(255),
+contact int(10),
+did integer,
+primary key(tid),
+foreign key(did) references departments(depId)
+);
+
+create table courses
+(
+cid integer not null auto_increment,
+cname varchar(255),
+did integer not null,
+ic_id varchar(12),
+primary key(cid),
+foreign key(did) references departments(depId),
+foreign key(ic_id) references teachers(tid)
+);
+
+create table registered
+(
+sid varchar(12) not null,
+tid varchar(12) not null,
+cid integer not null,
+sem integer not null,
+primary key(sid,tid,cid),
+foreign key(sid) references students(bitsid),
+foreign key(tid) references teachers(tid),
+foreign key(cid) references courses(cid)
+);
+

@@ -1,0 +1,186 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.oaks.bitsnow"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="15" />
+  <!-- GCM connects to Internet Services. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Creates a custom permission so only this app can receive its messages. -->
+    <permission
+        android:name="com.oaks.bitsnow.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.oaks.bitsnow.permission.C2D_MESSAGE" />
+
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!-- Network State Permissions to detect Internet status -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Permission to vibrate -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="BITS Now"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".StudentHome"
+            android:label="@string/title_activity_main"
+             android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+             >
+        </activity>
+		<activity
+            android:name=".FacultyHome"
+            android:label="@string/title_activity_main"
+             android:screenOrientation="portrait"
+                        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+		<activity
+            android:name=".StudentPage"
+            android:label="@string/title_activity_main" 
+             android:screenOrientation="portrait"
+                        android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+		<activity
+            android:name=".MessOption"
+            android:label="choose mess option" 
+             android:screenOrientation="portrait"
+                        android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+		<activity
+            android:name=".FacultyPage"
+            android:label="individual faculty page" 
+             android:screenOrientation="portrait"
+                        android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+		<activity
+            android:name=".FacultyList"
+            android:label="list of faculty" 
+             android:screenOrientation="portrait"
+                        android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+		<activity
+            android:name=".DeptList"
+            android:label="List of departments" 
+             android:screenOrientation="portrait"
+                        android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+		<activity
+            android:name=".CoursePage"
+            android:label="individual course page" 
+             android:screenOrientation="portrait"
+                        android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+		<activity
+            android:name=".CourseList"
+            android:label="list of courses" 
+             android:screenOrientation="portrait"
+                        android:theme="@android:style/Theme.Light.NoTitleBar">
+
+        </activity>
+		<activity
+            android:name=".StudentSearch"
+            android:label="search student" 
+             android:screenOrientation="portrait"
+                        android:theme="@android:style/Theme.Light.NoTitleBar">
+
+        </activity>
+   		 <activity
+            android:name=".Schedule"
+            android:label="schedule for the day" 
+             android:screenOrientation="portrait"
+                        android:theme="@android:style/Theme.Light.NoTitleBar">
+
+        </activity>
+        <activity
+            android:name=".Mycourses"
+            android:label="My courses" 
+             android:screenOrientation="portrait"
+                        android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+        <activity
+            android:name=".MyCoursesFaculty"
+            android:label="My courses for faculty" 
+             android:screenOrientation="portrait"
+                        android:theme="@android:style/Theme.Light.NoTitleBar">
+
+        </activity>
+		<activity
+            android:name=".SearchResults"
+            android:label="search results" 
+             android:screenOrientation="portrait"
+                        android:theme="@android:style/Theme.Light.NoTitleBar">
+
+        </activity>
+		<activity
+            android:name=".Splash"
+            android:label="BITS Now" 
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:screenOrientation="portrait"
+             >
+       		<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+		<activity
+            android:name=".LoginPage"
+            android:label="BITS Now" 
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+       	<activity
+            android:name=".MainActivity"
+            android:label="BITS Now" 
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+        <service 
+            android:name=".NotifyService"
+            android:icon="@drawable/ic_launcher"
+            android:label="oaksnotify"
+            />
+ 
+        <receiver android:name="MyScheduleReceiver" >           
+        <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+        </intent-filter>
+        </receiver>
+        
+        <receiver android:name="MyStartServiceReceiver" >
+        </receiver>
+                
+             <receiver
+            android:name="com.google.android.gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <!-- Receives the registration id. -->
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.oaks.bitsnow" />
+            </intent-filter>
+        </receiver>
+        
+        <service android:name=".GCMIntentService" />
+        
+        </application>
+
+</manifest>

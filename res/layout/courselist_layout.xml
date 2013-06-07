@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eeeeee"
+     >
+
+    <TextView
+        android:id="@+id/textViewCourses"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Course List: "
+        android:textColor="#000"
+        android:textAppearance="?android:attr/textAppearanceLarge" 
+                android:padding="20dp"
+        android:textStyle="bold"
+        android:background="#dddddd"
+        />
+
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#dddddd"
+         >   
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextViewCourses"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:background="@drawable/textsearch"
+        android:textSize="17dp"
+        android:ems="10"
+        android:textColor="#000"
+        android:textColorHint="#c0c0c0"
+        android:hint="search courses"
+        android:layout_marginBottom="5dp"
+         android:singleLine="true"
+         android:visibility="gone"
+          >
+
+        <requestFocus />
+    </AutoCompleteTextView>
+    
+</LinearLayout>
+    <ListView
+        android:id="@+id/listViewCourses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#101010"
+        android:background="#88eeeeee"
+        android:smoothScrollbar="true"
+        android:cacheColorHint="#00000000"
+         >
+    </ListView>
+
+</LinearLayout>
